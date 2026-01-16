@@ -1,9 +1,9 @@
-class Pstree < Formula
+class PstreeAT094 < Formula
   desc "Display a tree of processes."
   homepage "https://github.com/bananazon/pstree"
-  url "https://codeload.github.com/bananazon/pstree/tar.gz/refs/tags/v0.9.5"
-  sha256 "3155bf56a22dddb10517880ad923eeef7f472049ff0dd81e93043dee9524b73e"
-  version "0.9.5"
+  url "https://codeload.github.com/bananazon/pstree/tar.gz/refs/tags/v0.9.4"
+  sha256 "ed22c79f8a8df97df5a345ca52b31b14ece7e5d81627cace398146bac1d3a023"
+  version "0.9.4"
 
   depends_on "go" => "1.23.5"
 
