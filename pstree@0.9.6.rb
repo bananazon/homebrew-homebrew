@@ -1,4 +1,4 @@
-class Pstree < Formula
+class PstreeAT096 < Formula
   desc "Display a tree of processes."
   homepage "https://github.com/bananazon/pstree"
   url "https://codeload.github.com/bananazon/pstree/tar.gz/refs/tags/v0.9.6"
