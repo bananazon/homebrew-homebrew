@@ -5,7 +5,7 @@ class EnpassAT058 < Formula
   sha256 "7dfd0e695bd61a1ad009ff685f3af9aabdcad70184262d2922b009a0ea14d5b6"
   version "0.5.8"
 
-  depends_on "go
+  depends_on "go"
 
   def install
     system "make", "build"
