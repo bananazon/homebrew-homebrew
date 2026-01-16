@@ -1,18 +1,39 @@
 class Raindrop < Formula
-  desc "A command line interface to the Raindrop.io bookmark manager."
+  desc "Command-line interface to the Raindrop.io bookmark manager"
   homepage "https://github.com/bananazon/raindrop"
   url "https://codeload.github.com/bananazon/raindrop/tar.gz/refs/tags/v0.5.7"
-  sha256 "ed1c647adb3f4cea92952f97d826fea414b8353707fb7b68f01541703d8743f5"
+  sha256 "f6479d62f479087bcc331d1ef3f06f4f763ee35e822967a519fe0bdec685e668"
+  license "MIT"
   version "0.5.7"
 
-  depends_on "go" => "1.12"
+  depends_on "go"
 
   def install
-    system "make", "build"
-    bin.install "bin/raindrop" => "raindrop"
+    ldflags = %W[
+      -s -w
+      -X raindrop.Suffix=
+    ]
+
+    system "go", "build", *std_go_args(ldflags: ldflags), "-o", bin/"raindrop"
+    pkgshare.install "config.yaml.example"
   end
 
-  def test
-    system "#{bin}/raindrop", "version"
+  test do
+    assert_match "v#{version}", shell_output("#{bin}/raindrop version")
+  end
+
+  def caveats
+    <<~EOS
+      Raindrop requires a configuration file.
+
+      A template has been installed to:
+        #{pkgshare}/config.yaml.example
+
+      To create your config:
+        mkdir -p ~/.config/raindrop
+        cp #{pkgshare}/config.yaml.example ~/.config/raindrop/config.yaml
+
+      Then edit the file and put your Raindrop API token in the `apiToken` field.
+    EOS
   end
 end
