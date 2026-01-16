@@ -5,7 +5,7 @@ class Dfimage < Formula
   sha256 "b5c65cd7e722f4a2e4723d69d1a0c932cd8a47f1887d489fa6f0f212fa1e7c9e"
   version "0.1.1"
 
-  depends_on "go" => "1.12"
+  depends_on "go
 
   def install
     system "make", "build"

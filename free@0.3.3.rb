@@ -5,7 +5,7 @@ class FreeAT033 < Formula
   sha256 "142eed3753a0c71c5d39fe0bb00055ceac7ab899e2f917cde550bce6b1b6c986"
   version "0.3.3"
 
-  depends_on "go" => "1.12"
+  depends_on "go
 
   def install
     system "make", "build"

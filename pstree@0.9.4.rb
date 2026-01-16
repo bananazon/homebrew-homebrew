@@ -5,7 +5,7 @@ class PstreeAT094 < Formula
   sha256 "ed22c79f8a8df97df5a345ca52b31b14ece7e5d81627cace398146bac1d3a023"
   version "0.9.4"
 
-  depends_on "go" => "1.23.5"
+  depends_on "go"
 
   def install
     system "make", "build"
