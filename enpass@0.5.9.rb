@@ -1,4 +1,4 @@
-class Enpass < Formula
+class EnpassAT058 < Formula
   desc "A command line interface to the Enpass password manager."
   homepage "https://github.com/bananazon/enpass"
   url "https://codeload.github.com/bananazon/enpass/tar.gz/refs/tags/v0.5.9"
